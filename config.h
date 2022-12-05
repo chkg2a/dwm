@@ -16,21 +16,18 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "JetBrains Mono:size=15", "JoyPixels:pixelsize=12:antialias=true:autohint=true"  };
-
-#include "/home/xrenne/.cache/wal/colors-wal-dwm.h";
-
-/* static char normbgcolor[]           = "#222222"; */
-/* static char normbordercolor[]       = "#444444"; */
-/* static char normfgcolor[]           = "#bbbbbb"; */
-/* static char selfgcolor[]            = "#eeeeee"; */
-/* static char selbordercolor[]        = "#770000"; */
-/* static char selbgcolor[]            = "#005577"; */
-/* static char *colors[][3] = { */
-/*        /1*               fg           bg           border   *1/ */
-/*        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor }, */
-/*        [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  }, */
-/* }; */
+static char *fonts[]          = { "JetBrains Mono:size=13", "JoyPixels:pixelsize=12:antialias=true:autohint=true"  };
+static char normbgcolor[]           = "#222222";
+static char normbordercolor[]       = "#444444";
+static char normfgcolor[]           = "#bbbbbb";
+static char selfgcolor[]            = "#eeeeee";
+static char selbordercolor[]        = "#770000";
+static char selbgcolor[]            = "#005577";
+static char *colors[][3] = {
+       /*               fg           bg           border   */
+       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+};
 
 typedef struct {
 	const char *name;
@@ -45,7 +42,7 @@ static Sp scratchpads[] = {
 };
 
 /* tagging */
-static const char *tags[] = { ">_", "🌐", "#️⃣", "{}", "🖥️", "$", "*", "py", "code" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -69,7 +66,6 @@ static int resizehints = 0;    /* 1 means respect size hints in tiled resizals *
 #include "vanitygaps.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[M]",	monocle },		/* All windows on top of eachother */
 	{ "[]=",	tile },			/* Default: Master on left, slaves on right */
 	{ "TTT",	bstack },		/* Master on top, slaves on bottom */
 
@@ -77,6 +73,7 @@ static const Layout layouts[] = {
 	{ "[\\]",	dwindle },		/* Decreasing in size right and leftward */
 
 	{ "[D]",	deck },			/* Master on left, slaves in monocle-like mode on right */
+	{ "[M]",	monocle },		/* All windows on top of eachother */
 
 	{ "|M|",	centeredmaster },		/* Master in middle, slaves on sides */
 	{ ">M>",	centeredfloatingmaster },	/* Same but master floats */
