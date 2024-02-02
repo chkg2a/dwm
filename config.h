@@ -4,6 +4,7 @@
 #define TERMINAL "wezterm"
 #define TERMCLASS "St"
 #define BROWSER "firefox"
+#define bruh "xd"
 
 /* appearance */
 static unsigned int borderpx  = 3;        /* border pixel of windows */
