@@ -4,7 +4,7 @@
 #define TERMINAL "wezterm"
 #define TERMCLASS "St"
 #define BROWSER "firefox"
-#define bruh "xd"
+#define NOTETAKINGAPP "obsidian"
 
 /* appearance */
 static unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -167,7 +167,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nmtui", NULL } } },
 	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL "/home/xrenne/.local/bin/quick_qr") },
-	// { MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD("") },
+	{ MODKEY|ShiftMask,		XK_e,		spawn,	{.v = (const char*[]){ NOTETAKINGAPP, NULL}} },
 	{ MODKEY,			XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "nvim leetcode.nvim", NULL } } },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "btop", NULL } } },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
@@ -222,7 +222,7 @@ static const Key keys[] = {
 	/* { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") }, */
 	{ MODKEY,			XK_n,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nvim", "/home/xrenne/random_notes", NULL } } },
 	// { MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e dwmblocks ; pkill dwmblocks") },
-	{ MODKEY,			XK_m,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "spotify-adblock", NULL } } },
+	{ MODKEY,			XK_m,		spawn,		{.v = (const char*[]){ "spotify-adblock", NULL } } },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
 	// { MODKEY,			XK_comma,	spawn,		{.v = (const char*[]){ "mpc", "prev", NULL } } },
 	// { MODKEY|ShiftMask,		XK_comma,	spawn,		{.v = (const char*[]){ "mpc", "seek", "0%", NULL } } },
