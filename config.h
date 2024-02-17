@@ -166,8 +166,8 @@ static const Key keys[] = {
 	// { MODKEY|ShiftMask,		XK_q,		spawn,		{.v = (const char*[]){ "sysact", NULL } } },
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nmtui", NULL } } },
-	{ MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL "/home/xrenne/.local/bin/quick_qr") },
-	{ MODKEY|ShiftMask,		XK_e,		spawn,	{.v = (const char*[]){ NOTETAKINGAPP, NULL}} },
+	{ MODKEY,		XK_e,		spawn,	{.v = (const char*[]){ NOTETAKINGAPP, NULL}} },
+	{ MODKEY|ShiftMask,			XK_e,		spawn,		SHCMD(TERMINAL "/home/xrenne/.local/bin/quick_qr") },
 	{ MODKEY,			XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "nvim leetcode.nvim", NULL } } },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "btop", NULL } } },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
