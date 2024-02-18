@@ -153,6 +153,7 @@ static const Key keys[] = {
 	TAGKEYS(			XK_9,		8)
 	{ MODKEY,			XK_0,		view,		{.ui = ~0 } },
 	{ MODKEY|ShiftMask,		XK_0,		tag,		{.ui = ~0 } },
+	{ 0,			XK_F1,	spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
 	{ 0,			XK_F2,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; kill -44 $(pidof dwmblocks)") },
 	{ 0,			XK_F3,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_minus,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; kill -44 $(pidof dwmblocks)") },
