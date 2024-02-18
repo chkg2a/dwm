@@ -153,6 +153,8 @@ static const Key keys[] = {
 	TAGKEYS(			XK_9,		8)
 	{ MODKEY,			XK_0,		view,		{.ui = ~0 } },
 	{ MODKEY|ShiftMask,		XK_0,		tag,		{.ui = ~0 } },
+	{ 0,			XK_F2,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; kill -44 $(pidof dwmblocks)") },
+	{ 0,			XK_F3,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_minus,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,		XK_minus,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 15%-; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_equal,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; kill -44 $(pidof dwmblocks)") },
@@ -167,7 +169,8 @@ static const Key keys[] = {
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nmtui", NULL } } },
 	{ MODKEY,		XK_e,		spawn,	{.v = (const char*[]){ NOTETAKINGAPP, NULL}} },
-	{ MODKEY|ShiftMask,			XK_e,		spawn,		SHCMD(TERMINAL "/home/xrenne/.local/bin/quick_qr") },
+	{ MODKEY|ShiftMask,		XK_e,		spawn,	SHCMD(TERMINAL "nvim /home/xrenne/.local/share/obsidian_ChK/ChK/ChK.md") },
+	{ MODKEY|ShiftMask,			XK_m,		spawn,		SHCMD(TERMINAL "/home/xrenne/.local/bin/quick_qr") },
 	{ MODKEY,			XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "nvim leetcode.nvim", NULL } } },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "btop", NULL } } },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
@@ -241,8 +244,6 @@ static const Key keys[] = {
 	// { MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
 
 	// { MODKEY,			XK_F1,		spawn,		SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -") },
-	// { MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "tutorialvids", NULL } } },
-	// { MODKEY,			XK_F3,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pavucontrol") },
 	{ 0,			XK_F5,		spawn,	  SHCMD("brightnessctl set 10%-") },
 	{ 0,			XK_F6,		spawn,	  SHCMD("brightnessctl set 10%+") },
