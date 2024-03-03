@@ -3,7 +3,7 @@
 /* Constants */
 #define TERMINAL "wezterm"
 #define TERMCLASS "St"
-#define BROWSER "firefox"
+#define BROWSER "brave"
 #define NOTETAKINGAPP "obsidian"
 
 /* appearance */
