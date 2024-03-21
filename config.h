@@ -246,8 +246,8 @@ static const Key keys[] = {
 
 	// { MODKEY,			XK_F1,		spawn,		SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -") },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pavucontrol") },
-	{ 0,			XK_F5,		spawn,	  SHCMD("brightnessctl set 10%-") },
-	{ 0,			XK_F6,		spawn,	  SHCMD("brightnessctl set 10%+") },
+	{ 0,			XK_F5,		spawn,	  SHCMD("brightnessctl set 1%-") },
+	{ 0,			XK_F6,		spawn,	  SHCMD("brightnessctl set 1%+") },
 	// { MODKEY,			XK_F7,		spawn,		{.v = (const char*[]){ "td-toggle", NULL } } },
 	// { MODKEY,			XK_F8,		spawn,		{.v = (const char*[]){ "mailsync", NULL } } },
 	// { MODKEY,			XK_F9,		spawn,		{.v = (const char*[]){ "mounter", NULL } } },
