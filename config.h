@@ -5,6 +5,7 @@
 #define TERMCLASS "St"
 #define BROWSER "brave"
 #define NOTETAKINGAPP "obsidian"
+#define FILEMANAGER "thunar"
 
 /* appearance */
 static unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -170,9 +171,9 @@ static const Key keys[] = {
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nmtui", NULL } } },
 	{ MODKEY,		XK_e,		spawn,	{.v = (const char*[]){ NOTETAKINGAPP, NULL}} },
-	{ MODKEY|ShiftMask,		XK_e,		spawn,	SHCMD(TERMINAL "nvim /home/xrenne/.local/share/obsidian_ChK/ChK/ChK.md") },
+	{ MODKEY|ShiftMask,		XK_e,		spawn,	{.v = (const char*[]){ FILEMANAGER, NULL}} },
 	{ MODKEY|ShiftMask,			XK_m,		spawn,		SHCMD(TERMINAL "/home/xrenne/.local/bin/quick_qr") },
-	{ MODKEY,			XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "nvim leetcode.nvim", NULL } } },
+	{ MODKEY,		XK_r,		spawn,	{.v = (const char*[]){ "keepassxc", NULL}} },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "btop", NULL } } },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
 	{ MODKEY|ShiftMask,		XK_t,		setlayout,	{.v = &layouts[1]} }, /* bstack */
