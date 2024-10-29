@@ -96,7 +96,7 @@ static const Layout layouts[] = {
 #define STACKKEYS(MOD,ACTION) \
 	{ MOD,	XK_j,	ACTION##stack,	{.i = INC(+1) } }, \
 	{ MOD,	XK_k,	ACTION##stack,	{.i = INC(-1) } }, \
-	{ MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, \
+	/*{ MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, \*/
 	/* { MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \ */
 	/* { MOD, XK_a,     ACTION##stack, {.i = 1 } }, \ */
 	/* { MOD, XK_z,     ACTION##stack, {.i = 2 } }, \ */
@@ -169,6 +169,8 @@ static const Key keys[] = {
 	{ MODKEY,			XK_q,		killclient,	{0} },
 	// { MODKEY|ShiftMask,		XK_q,		spawn,		{.v = (const char*[]){ "sysact", NULL } } },
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
+	{ MODKEY,			XK_v,		spawn,		SHCMD("pkill picom") },
+	{ MODKEY|ShiftMask,			XK_v,		spawn,		SHCMD("picom &") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nmtui", NULL } } },
 	{ MODKEY,		XK_e,		spawn,	{.v = (const char*[]){ NOTETAKINGAPP, NULL}} },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,	{.v = (const char*[]){ FILEMANAGER, NULL}} },
