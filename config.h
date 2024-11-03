@@ -171,7 +171,6 @@ static const Key keys[] = {
     // (const char*[]){ "sysact", NULL } } },
     {MODKEY, XK_w, spawn, {.v = (const char *[]){BROWSER, NULL}}},
     {MODKEY, XK_w, spawn, {.v = (const char *[]){BROWSER, NULL}}},
-    {MODKEY, XK_q, killclient, {0}},
     {MODKEY, XK_v, spawn,
      SHCMD("if pkill compfy; then;picom &;else;pkill picom;compfy &;fi")},
     {MODKEY | ShiftMask,
@@ -307,6 +306,7 @@ static const Key keys[] = {
     // /dev/video[0,2,4,6,8] | tail -n 1)") }, { MODKEY,
     // XK_F12,		spawn,		SHCMD("remaps") },
     {MODKEY, XK_space, zoom, {0}},
+    {MODKEY, XK_q, killclient, {0}},
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
     {0, XF86XK_AudioMute, spawn,
      SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof "
