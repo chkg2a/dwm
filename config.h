@@ -118,7 +118,7 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd)                                                             \
   {                                                                            \
-    .v = (const char *[]) { "/bin/sh", "-c", cmd, NULL }                       \
+    .v = (const char *[]) { "/bin/bash", "-c", cmd, NULL }                     \
   }
 
 /* commands */
@@ -170,24 +170,26 @@ static const Key keys[] = {
     // { MODKEY|ShiftMask,		XK_q,		spawn,		{.v =
     // (const char*[]){ "sysact", NULL } } },
     {MODKEY, XK_w, spawn, {.v = (const char *[]){BROWSER, NULL}}},
-    {MODKEY, XK_v, spawn,
-     SHCMD("if pkill compfy; then;picom &;else;pkill picom;compfy &;fi")},
+    {MODKEY, XK_v, spawn, SHCMD("/home/xrenne/.local/bin/dietranspa")},
     {MODKEY | ShiftMask,
      XK_w,
      spawn,
      {.v = (const char *[]){TERMINAL, "-e", "nmtui", NULL}}},
-    {MODKEY, XK_e, spawn, {.v = (const char *[]){FILEMANAGER, NULL}}},
-    {MODKEY | ShiftMask, XK_q, spawn,
-     SHCMD("/home/xrenne/.local/bin/quick_qr")},
-    {MODKEY, XK_r, spawn, {.v = (const char *[]){"keepassxc", NULL}}},
     {MODKEY | ShiftMask,
      XK_e,
      spawn,
-     SHCMD("/home/xrenne/.local/bin/fastqr")},
-    {MODKEY | ShiftMask,
+     {.v = (const char *[]){FILEMANAGER, NULL}}},
+    {MODKEY | ShiftMask, XK_q, spawn,
+     SHCMD("/home/xrenne/.local/bin/quick_qr")},
+    {MODKEY, XK_r, spawn, {.v = (const char *[]){"keepassxc", NULL}}},
+    {MODKEY,
+     XK_e,
+     spawn,
+     {.v = (const char *[]){TERMINAL, "-e", "lfub", NULL}}},
+    {MODKEY,
      XK_p,
      spawn,
-     SHCMD("bemoji -t")},
+     {.v = (const char *[]){TERMINAL, "-e", "nvim", NULL}}},
     {MODKEY | ShiftMask,
      XK_r,
      spawn,
@@ -264,8 +266,7 @@ static const Key keys[] = {
     {MODKEY,
      XK_n,
      spawn,
-     {.v = (const char *[]){TERMINAL, "-e", "nvim", "/home/xrenne/random_notes",
-                            NULL}}},
+     {.v = (const char *[]){TERMINAL, "-e", "nvim", NULL}}},
     // { MODKEY|ShiftMask,		XK_n,		spawn,
     // SHCMD(TERMINAL " -e dwmblocks ; pkill dwmblocks") },
     {MODKEY, XK_m, spawn, {.v = (const char *[]){"spotify-adblock", NULL}}},
@@ -340,7 +341,7 @@ static const Key keys[] = {
     {0,
      XF86XK_AudioStop,
      spawn,
-     {.v = (const char *[]){"pavucontrol", "", NULL}}},
+     {.v = (const char *[]){"mpv_pause", "", NULL}}},
     {0,
      XF86XK_AudioRewind,
      spawn,
