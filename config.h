@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* Constants */
-#define TERMINAL "wezterm"
+#define TERMINAL "kitty"
 #define TERMCLASS "St"
 #define BROWSER "brave"
 #define NOTETAKINGAPP "obsidian"
@@ -171,10 +171,7 @@ static const Key keys[] = {
     // (const char*[]){ "sysact", NULL } } },
     {MODKEY, XK_w, spawn, {.v = (const char *[]){BROWSER, NULL}}},
     {MODKEY, XK_v, spawn, SHCMD("/home/xrenne/.local/bin/dietranspa")},
-    {MODKEY | ShiftMask,
-     XK_w,
-     spawn,
-     {.v = (const char *[]){TERMINAL, "-e", "nmtui", NULL}}},
+    {MODKEY | ShiftMask, XK_w, spawn, SHCMD("bemoji -ctn")},
     {MODKEY | ShiftMask,
      XK_e,
      spawn,
@@ -249,10 +246,10 @@ static const Key keys[] = {
     // { MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui =
     // 0} },
 
-    {MODKEY, XK_z, incrgaps, {.i = +3}},
-    /* { MODKEY|ShiftMask,		XK_z,		spawn,
-       SHCMD("") }, */
-    {MODKEY, XK_x, incrgaps, {.i = -3}},
+    // {MODKEY, XK_z, incrgaps, {.i = +3}},
+
+    {MODKEY | ShiftMask, XK_x, spawn, SHCMD("/home/xrenne/.local/bin/sxcs_toggle")},
+    // {MODKEY, XK_x, incrgaps, {.i = -3}},
     /* { MODKEY|ShiftMask,		XK_x,		spawn,
        SHCMD("") }, */
     // { MODKEY,			XK_c,		spawn,		{.v =
