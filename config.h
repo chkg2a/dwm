@@ -171,18 +171,15 @@ static const Key keys[] = {
     // (const char*[]){ "sysact", NULL } } },
     {MODKEY, XK_w, spawn, {.v = (const char *[]){BROWSER, NULL}}},
     {MODKEY, XK_v, spawn, SHCMD("/home/xrenne/.local/bin/dietranspa")},
-    {MODKEY | ShiftMask, XK_w, spawn, SHCMD("bemoji -ctn")},
-    {MODKEY | ShiftMask,
-     XK_e,
-     spawn,
-     {.v = (const char *[]){FILEMANAGER, NULL}}},
+    {MODKEY | ShiftMask, XK_w, spawn, {.v = (const char *[]){"brave --new-window www.chatgpt.com", NULL}}},
+    {MODKEY | ShiftMask, XK_e, spawn, SHCMD("bemoji -ctn")},
     {MODKEY | ShiftMask, XK_q, spawn,
      SHCMD("/home/xrenne/.local/bin/quick_qr")},
     {MODKEY, XK_r, spawn, {.v = (const char *[]){"keepassxc", NULL}}},
     {MODKEY,
      XK_e,
      spawn,
-     {.v = (const char *[]){TERMINAL, "-e", "lfub", NULL}}},
+     {.v = (const char *[]){FILEMANAGER, NULL}}},
     {MODKEY,
      XK_p,
      spawn,
@@ -190,13 +187,14 @@ static const Key keys[] = {
     {MODKEY | ShiftMask,
      XK_r,
      spawn,
-     {.v = (const char *[]){TERMINAL, "-e", "btop", NULL}}},
+     {.v = (const char *[]){TERMINAL, "-e", "fastqr", NULL}}},
     {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},             /* tile */
     {MODKEY | ShiftMask, XK_t, setlayout, {.v = &layouts[1]}}, /* bstack */
     {MODKEY, XK_y, setlayout, {.v = &layouts[2]}},             /* spiral */
     {MODKEY | ShiftMask, XK_y, setlayout, {.v = &layouts[3]}}, /* dwindle */
     {MODKEY, XK_u, setlayout, {.v = &layouts[4]}},             /* deck */
     {MODKEY | ShiftMask, XK_u, setlayout, {.v = &layouts[5]}}, /* monocle */
+    {MODKEY | ShiftMask, XK_o, setlayout, {.v = &layouts[8]}}, /* monocle */
     {MODKEY, XK_i, setlayout, {.v = &layouts[6]}}, /* centeredmaster */
     {MODKEY | ShiftMask,
      XK_i,
