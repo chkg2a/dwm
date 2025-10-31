@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* Constants */
-#define TERMINAL "kitty"
+#define TERMINAL "wezterm"
 #define TERMCLASS "St"
 #define BROWSER "brave"
 #define NOTETAKINGAPP "obsidian"
@@ -171,8 +171,10 @@ static const Key keys[] = {
     // (const char*[]){ "sysact", NULL } } },
     {MODKEY, XK_w, spawn, {.v = (const char *[]){BROWSER, NULL}}},
     {MODKEY, XK_v, spawn, SHCMD("/home/xrenne/.local/bin/dietranspa")},
-    {MODKEY | ShiftMask, XK_w, spawn, {.v = (const char *[]){"brave --new-window www.chatgpt.com", NULL}}},
+    {MODKEY | ShiftMask, XK_w, spawn, {.v = (const char *[]){BROWSER, "--new-window", "www.chatgpt.com", NULL}}},
     {MODKEY | ShiftMask, XK_e, spawn, SHCMD("bemoji -ctn")},
+    {MODKEY | ShiftMask, XK_t, spawn,
+     SHCMD("/home/xrenne/.local/bin/extractText")},
     {MODKEY | ShiftMask, XK_q, spawn,
      SHCMD("/home/xrenne/.local/bin/quick_qr")},
     {MODKEY, XK_r, spawn, {.v = (const char *[]){"keepassxc", NULL}}},
@@ -189,7 +191,7 @@ static const Key keys[] = {
      spawn,
      {.v = (const char *[]){TERMINAL, "-e", "fastqr", NULL}}},
     {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},             /* tile */
-    {MODKEY | ShiftMask, XK_t, setlayout, {.v = &layouts[1]}}, /* bstack */
+    // {MODKEY | ShiftMask, XK_t, setlayout, {.v = &layouts[1]}}, /* bstack */
     {MODKEY, XK_y, setlayout, {.v = &layouts[2]}},             /* spiral */
     {MODKEY | ShiftMask, XK_y, setlayout, {.v = &layouts[3]}}, /* dwindle */
     {MODKEY, XK_u, setlayout, {.v = &layouts[4]}},             /* deck */
@@ -292,8 +294,8 @@ static const Key keys[] = {
 
     // { MODKEY,			XK_F1,		spawn,
     // SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -") },
-    {0, XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set 1%-")},
-    {0, XF86XK_MonBrightnessUp, spawn, SHCMD("brightnessctl set 1%+")},
+    {0, XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl set 5%-")},
+    {0, XF86XK_MonBrightnessUp, spawn, SHCMD("brightnessctl set 5%+")},
     // { MODKEY,			XK_F7,		spawn,		{.v =
     // (const char*[]){ "td-toggle", NULL } } }, { MODKEY,
     // XK_F8,		spawn,		{.v = (const char*[]){ "mailsync", NULL
