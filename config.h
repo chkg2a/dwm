@@ -6,6 +6,7 @@
 #define BROWSER "brave"
 #define NOTETAKINGAPP "obsidian"
 #define FILEMANAGER "nautilus"
+#define APPRUNNER "rofi -show drun"
 
 /* --- Appearance --- */
 static unsigned int borderpx = 3;
@@ -150,6 +151,7 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_w, spawn, {.v = (const char *[]){BROWSER, "--new-window", "www.chatgpt.com", NULL}}},
     {MODKEY, XK_e, spawn, {.v = (const char *[]){FILEMANAGER, NULL}}},
     {MODKEY, XK_r, spawn, {.v = (const char *[]){ "keepassxc", NULL}}},
+    {MODKEY, XK_d, spawn, {.v = (const char *[]){ APPRUNNER, NULL}}},
     {MODKEY, XK_v, spawn, SHCMD("/home/xrenne/.local/bin/dietranspa")},
     {MODKEY | ShiftMask, XK_e, spawn, SHCMD("bemoji -ctn")},
     {MODKEY | ShiftMask, XK_t, spawn, SHCMD("/home/xrenne/.local/bin/extractText")},
