@@ -159,7 +159,7 @@ static const Key keys[] = {
     {MODKEY, XK_s, spawn, SHCMD("/home/xrenne/.local/bin/takess")},
     {MODKEY | ShiftMask, XK_s, spawn, SHCMD("/home/xrenne/.local/bin/takess-select")},
     {MODKEY | ShiftMask, XK_x, spawn, SHCMD("/home/xrenne/.local/bin/sxcs_toggle")},
-    {MODKEY, XK_m, spawn, {.v = (const char *[]){"spotify-adblock", NULL}}},
+    {MODKEY, XK_m, spawn, SHCMD("/home/xrenne/.local/bin/spotify-adblock")},
 
     /* Layouts */
     {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},
