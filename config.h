@@ -29,6 +29,7 @@ static char selfgcolor[] = "#eeeeee";
 static char selbordercolor[] = "#770000";
 static char selbgcolor[] = "#005577";
 
+enum { SchemeNorm, SchemeSel };
 static char *colors[][3] = {
     [SchemeNorm] = {normfgcolor, normbgcolor, normbordercolor},
     [SchemeSel] = {selfgcolor, selbgcolor, selbordercolor},
@@ -151,7 +152,7 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_w, spawn, {.v = (const char *[]){BROWSER, "--new-window", "www.chatgpt.com", NULL}}},
     {MODKEY, XK_e, spawn, {.v = (const char *[]){FILEMANAGER, NULL}}},
     {MODKEY, XK_r, spawn, {.v = (const char *[]){ "keepassxc", NULL}}},
-    {MODKEY, XK_d, spawn, {.v = (const char *[]){ APPRUNNER, NULL}}},
+    {MODKEY, XK_d, spawn, SHCMD(APPRUNNER)},
     {MODKEY, XK_v, spawn, SHCMD("/home/xrenne/.local/bin/dietranspa")},
     {MODKEY | ShiftMask, XK_e, spawn, SHCMD("bemoji -ctn")},
     {MODKEY | ShiftMask, XK_t, spawn, SHCMD("/home/xrenne/.local/bin/extractText")},
