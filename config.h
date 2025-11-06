@@ -29,7 +29,6 @@ static char selfgcolor[] = "#eeeeee";
 static char selbordercolor[] = "#770000";
 static char selbgcolor[] = "#005577";
 
-enum { SchemeNorm, SchemeSel };
 static char *colors[][3] = {
     [SchemeNorm] = {normfgcolor, normbgcolor, normbordercolor},
     [SchemeSel] = {selfgcolor, selbgcolor, selbordercolor},
@@ -159,8 +158,8 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_q, spawn, SHCMD("/home/xrenne/.local/bin/quick_qr")},
     {MODKEY, XK_p, spawn, {.v = (const char *[]){TERMINAL, "-e", "nvim", NULL}}},
     {MODKEY | ShiftMask, XK_r, spawn, {.v = (const char *[]){TERMINAL, "-e", "fastqr", NULL}}},
-    {MODKEY, XK_s, spawn, SHCMD("/home/xrenne/.local/bin/takess")},
-    {MODKEY | ShiftMask, XK_s, spawn, SHCMD("/home/xrenne/.local/bin/takess-select")},
+    {MODKEY, XK_s, spawn, SHCMD("/home/xrenne/.local/bin/screenshot full")},
+    {MODKEY | ShiftMask, XK_s, spawn, SHCMD("/home/xrenne/.local/bin/screenshot select")},
     {MODKEY | ShiftMask, XK_x, spawn, SHCMD("/home/xrenne/.local/bin/sxcs_toggle")},
     {MODKEY, XK_m, spawn, SHCMD("/home/xrenne/.local/bin/spotify-adblock")},
 
