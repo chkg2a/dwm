@@ -151,6 +151,7 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_w, spawn, {.v = (const char *[]){BROWSER, "--new-window", "www.chatgpt.com", NULL}}},
     {MODKEY, XK_e, spawn, {.v = (const char *[]){FILEMANAGER, NULL}}},
     {MODKEY, XK_r, spawn, {.v = (const char *[]){ "keepassxc", NULL}}},
+    {MODKEY, XK_n, spawn, {.v = (const char *[]){ "anki", NULL}}},
     {MODKEY, XK_d, spawn, SHCMD(APPRUNNER)},
     {MODKEY, XK_v, spawn, SHCMD("/home/xrenne/.local/bin/dietranspa")},
     {MODKEY | ShiftMask, XK_e, spawn, SHCMD("bemoji -ctn")},
