@@ -161,6 +161,7 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_r, spawn, {.v = (const char *[]){TERMINAL, "-e", "fastqr", NULL}}},
     {MODKEY, XK_s, spawn, SHCMD("/home/xrenne/.local/bin/screenshot full")},
     {MODKEY | ShiftMask, XK_s, spawn, SHCMD("/home/xrenne/.local/bin/screenshot select")},
+    {MODKEY | ShiftMask, XK_t, spawn, SHCMD("/home/xrenne/.local/bin/extractText")},
     {MODKEY | ShiftMask, XK_x, spawn, SHCMD("/home/xrenne/.local/bin/sxcs_toggle")},
     {MODKEY, XK_m, spawn, SHCMD("/home/xrenne/.local/bin/spotify-adblock")},
 
